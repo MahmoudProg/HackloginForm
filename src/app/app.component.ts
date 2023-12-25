@@ -15,8 +15,8 @@ export class AppComponent implements OnInit{
   Objects : any =[]
   Total_Box = 0
 
-  Card_Width = 85
-  Card_Height = 85
+  Card_Width = 75
+  Card_Height = 75
   ngOnInit(): void {
     this.ChangeBoxCount()
   }
