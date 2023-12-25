@@ -1,6 +1,8 @@
 $GrayColor : rgb(39, 39, 39);
 $GreenColor :rgb(45, 247, 45);
-
+*{
+  transition: all .5s;
+}
 .flex-container{
   width: 100%;
   height: 100%;
@@ -20,7 +22,7 @@ $GreenColor :rgb(45, 247, 45);
       background-color: $GreenColor;
     }
     &.Card-Out{
-      animation: OutAnimation 1.2s ease-in-out;
+      animation: OutAnimation 1.5s ease-in-out;
     }
     @keyframes OutAnimation {
       0%{background-color: $GreenColor;}
@@ -32,18 +34,29 @@ $GreenColor :rgb(45, 247, 45);
 
 .shadw{
   width: 100%;
-  height: 70%;
+  height: 0%;
   position: absolute;
-  top: -100%;
   left: 0;
-  background-color: rgb(45, 247, 45);
-  box-shadow: 0px 0px 100px 100px rgb(45, 247, 45);
   z-index: 0;
-  animation: MoveShadow 9s ease-in-out infinite;
-}
-@keyframes MoveShadow {
-0%{top:-100%}
-100%{top:calc(100% + 200px)}
+  &.Green{
+    animation: MoveShadowGreen 15s ease infinite;
+    box-shadow: 0px 0px 150px 150px rgb(45, 247, 45);
+  }
+  &.Red{
+    animation: MoveShadowRed 15s ease infinite;
+    box-shadow: 0px 0px 150px 150px rgb(45, 247, 45);
+    // box-shadow: 0px 0px 150px 150px rgb(247, 45, 45);
+  }
+  @keyframes MoveShadowGreen {
+    0%{top:calc(100% + 280px)}
+    50%{top:-30%}
+    100%{top:calc(100% + 280px)}
+  }
+  @keyframes MoveShadowRed {
+    0%{top:-30%}
+    50%{top:calc(100% + 280px)}
+    100%{top:-30%}
+  }
 }
 .Login-Form
 {
