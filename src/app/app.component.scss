@@ -1,0 +1,145 @@
+$GrayColor : rgb(39, 39, 39);
+$GreenColor :rgb(45, 247, 45);
+
+.flex-container{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(37, 37, 37, 0);
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+
+  $GrayColor_Card:rgb(20, 20, 20);
+  .card{
+    margin: 1px;
+    background-color:   $GrayColor_Card;
+    &.Card-Enter{
+      background-color: $GreenColor;
+    }
+    &.Card-Out{
+      animation: OutAnimation 1.2s ease-in-out;
+    }
+    @keyframes OutAnimation {
+      0%{background-color: $GreenColor;}
+      100%{background-color:  $GrayColor_Card;}
+    }
+  }
+
+}
+
+.shadw{
+  width: 100%;
+  height: 70%;
+  position: absolute;
+  top: -100%;
+  left: 0;
+  background-color: rgb(45, 247, 45);
+  box-shadow: 0px 0px 100px 100px rgb(45, 247, 45);
+  z-index: 0;
+  animation: MoveShadow 9s ease-in-out infinite;
+}
+@keyframes MoveShadow {
+0%{top:-100%}
+100%{top:calc(100% + 200px)}
+}
+.Login-Form
+{
+  position: absolute;
+  width: 400px;
+  padding: 15px 20px;
+  background-color: rgb(26, 26, 26);
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 3px 3px 16px 0px rgba(0, 0, 0, 0.6);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  font-family: system-ui;
+  .Sign-in{
+    h2{margin: 20px 0px ;}
+    text-align: center;
+    color: $GreenColor;
+  }
+
+  .Form-Body{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 20px 25px 20px;
+
+    .form-control{
+      position: relative;
+      margin: 18px 0px;
+      background: #212121;
+      // margin: 20px 0 40px;
+      input {
+        background-color: transparent;
+        border: 0;
+        border-bottom: 2px #ffffff00 solid;
+        display: block;
+        width: 100%;
+        padding: 15px 0;
+        font-size: 18px;
+        color: #fff;
+      }
+
+      input:focus,
+      input:valid {
+        outline: 0;
+        border-bottom-color: #a0f72f;
+        padding-left: 14px;
+        width: -webkit-fill-available;
+        margin: 0px 15px;
+      }
+
+      label {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        pointer-events: none;
+      }
+
+      label span {
+        display: inline-block;
+        font-size: 18px;
+        min-width: 5px;
+        color: #a0f72f;
+        transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+
+      input:focus+label span,
+      input:valid+label span {
+        color: #a0f72f;
+        transform: translateY(-30px);
+      }
+    }
+    .Forget-and-Signup{
+      display: flex;
+      justify-content: space-between;
+      padding: 16px 0px;
+      .Forget{color: gray; cursor: pointer;}
+      .Signup{color: $GreenColor; cursor: pointer;}
+    }
+    button{
+      padding: 15px 0px ;
+      font-size: 15px;
+      font-weight: bold;
+      border-radius: 4px;
+      width: 100%;
+      background-color: $GreenColor;
+      outline: none;
+          border: none;
+          cursor: pointer;
+    }
+  }
+}
+
+.Total-px{
+  position: absolute;
+  color: rgb(24 182 24);
+  top: -30px;
+}
